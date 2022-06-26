@@ -1,8 +1,6 @@
 #!/bin/bash
 exists()
 
-sleep 1 && curl -s https://raw.githubusercontent.com/cryptology-nodes/main/main/logo.sh |  bash && sleep 2
-
 {
   command -v "$1" >/dev/null 2>&1
 }
@@ -11,6 +9,9 @@ echo ''
 else
   sudo apt update && sudo apt install curl -y < "/dev/null"
 fi
+
+sleep 1 && curl -s https://raw.githubusercontent.com/cryptology-nodes/main/main/logo.sh |  bash && sleep 2
+
 bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     . $HOME/.bash_profile
